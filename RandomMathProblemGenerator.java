@@ -7,15 +7,16 @@ public class RandomMathProblemGenerator {
 
  		int i = 0;
  		int k = 0; 
- 		int option; 
+ 		String option; 
  		int answer; 
- 		int loopOption; 
+ 		double answerDivision; 
+ 		String loopOption; 
 		int num1; 
 		int num2; 
 		int sum; 
 		int difference; 
 		int product; 
-		int quotient; 
+		double quotient; 
 
 		while ( k == 0 ) {
 
@@ -47,13 +48,13 @@ public class RandomMathProblemGenerator {
 
 			Scanner input = new Scanner(System.in); 
 
-			option = input.nextInt();
+			option = input.nextLine();
 
 			System.out.println(); 
 
 			switch ( option ) {
 
-				case 1:
+				case "1":
 
 				while ( i == 0 ) {
 
@@ -66,6 +67,8 @@ public class RandomMathProblemGenerator {
 					sum = num1 + num2; 
 
 					answer = input.nextInt(); 
+
+					input.nextLine();
 
 					if ( answer == sum ) {
 
@@ -99,23 +102,23 @@ public class RandomMathProblemGenerator {
 
 					System.out.println("Enter your choice of 1, 2, or 3: \n"); 
 
-					loopOption = input.nextInt(); 
+					loopOption = input.nextLine(); 
 
 					switch ( loopOption ) {
 
-					case 1:
+					case "1":
 
 					System.out.println(); 
 
 					break; 
 
-					case 2:
+					case "2":
 
 					i++; 
 
 					break; 
 
-					case 3: 
+					case "3": 
 
 					System.out.println(); 
 
@@ -133,7 +136,7 @@ public class RandomMathProblemGenerator {
 
 				break;
 
-				case 2:
+				case "2":
 
 				while ( i == 0 ) {
 
@@ -177,6 +180,8 @@ public class RandomMathProblemGenerator {
 
 						answer = input.nextInt();
 
+						input.nextLine();
+
 						if ( answer == difference ) {
 
 							System.out.println("\nCorrect! "); 
@@ -211,23 +216,23 @@ public class RandomMathProblemGenerator {
 
 					System.out.println("Enter your choice of 1, 2, or 3: \n"); 
 
-					loopOption = input.nextInt(); 
+					loopOption = input.nextLine(); 
 
 					switch ( loopOption ) {
 
-					case 1:
+					case "1":
 
 					System.out.println(); 
 
 					break; 
 
-					case 2:
+					case "2":
 
 					i++; 
 
 					break; 
 
-					case 3: 
+					case "3": 
 
 					System.out.println(); 
 
@@ -244,6 +249,180 @@ public class RandomMathProblemGenerator {
 				} 
 
 				break; 
+
+				case "3": 
+
+				while ( i == 0 ) {
+
+					num1 = ( int )( Math.random() *  13 );
+
+					num2 = ( int )(Math.random() * 13 ); 
+
+					System.out.println("What is " + num1 + " * " + num2 + " ? \n");
+
+					product = num1 * num2; 
+
+					answer = input.nextInt(); 
+
+					input.nextLine();
+
+					if ( answer == product ) {
+
+						System.out.println("\nCorrect! "); 
+
+						System.out.println(); 
+				
+					}
+
+					else {
+
+						System.out.println(); 
+
+						System.out.println("Incorrect. The answer is: " + product ); 
+
+						System.out.println();
+
+					}
+
+					System.out.println("Would you like to: \n");  
+
+					System.out.println(); 
+
+					System.out.println("1. continue practicing? \n"); 
+
+					System.out.println("2. go back to main menu? \n");
+
+					System.out.println("3. exit program? \n"); 
+
+					System.out.println(); 
+
+					System.out.println("Enter your choice of 1, 2, or 3: \n"); 
+
+					loopOption = input.nextLine(); 
+
+					switch ( loopOption ) {
+
+					case "1":
+
+					System.out.println(); 
+
+					break; 
+
+					case "2":
+
+					i++; 
+
+					break; 
+
+					case "3": 
+
+					System.out.println(); 
+
+					System.out.println("Come practice again soon! "); 
+
+					System.out.println();
+
+					System.exit(1); 
+
+					break; 
+
+					}
+		
+				} 
+
+				break;
+
+				case "4": 
+
+				while ( i == 0 ) {
+
+					num1 = ( int )( Math.random() * 89 ) + 12;
+
+					num2 = ( int )(Math.random() * 13 ); 
+
+					System.out.println("What is " + num1 + " / " + num2 + " ? Include 2 decimal digits in your answer \n");
+
+					quotient = Math.round(((double)num1 / (double)num2) * 100.0) / 100.0; 
+
+					answerDivision = input.nextDouble(); 
+					
+					input.nextLine();
+
+					if ( answerDivision == quotient ) {
+
+						System.out.println("\nCorrect! "); 
+
+						System.out.println(); 
+				
+					}
+
+					else {
+
+						System.out.println(); 
+
+						System.out.println("Incorrect. The answer is: " + quotient ); 
+
+						System.out.println();
+
+					}
+
+					System.out.println("Would you like to: \n");  
+
+					System.out.println(); 
+
+					System.out.println("1. continue practicing? \n"); 
+
+					System.out.println("2. go back to main menu? \n");
+
+					System.out.println("3. exit program? \n"); 
+
+					System.out.println(); 
+
+					System.out.println("Enter your choice of 1, 2, or 3: \n"); 
+
+					loopOption = input.nextLine(); 
+
+					switch ( loopOption ) {
+
+					case "1":
+
+					System.out.println(); 
+
+					break; 
+
+					case "2":
+
+					i++; 
+
+					break; 
+
+					case "3": 
+
+					System.out.println(); 
+
+					System.out.println("Come practice again soon! "); 
+
+					System.out.println();
+
+					System.exit(1); 
+
+					break; 
+
+				}
+		
+			}
+
+			break;
+
+			default: 
+
+			System.out.println(); 
+
+			System.out.println("Invalid Input! Please enter a number 1 - 4"); 
+
+			i++; 
+
+			break;  
 
 			}
 
