@@ -16,7 +16,8 @@ public class RandomMathProblemGenerator {
 		int sum; 
 		int difference; 
 		int product; 
-		double quotient; 
+		double quotient;
+		int subMenu;
 
 		while ( k == 0 ) {
 
@@ -48,19 +49,33 @@ public class RandomMathProblemGenerator {
 					num2 = ( int )(Math.random() * 101 ); 
 					System.out.println("What is " + num1 + " + " + num2 + " ? \n");
 					sum = num1 + num2; 
-					answer = input.nextInt(); 
-					input.nextLine();
 
-					if ( answer == sum ) {
-						System.out.println("\nCorrect! "); 
-						System.out.println(); 
+					try {
+						answer = input.nextInt(); 
+						input.nextLine();
+
+						if ( answer == sum ) {
+							System.out.println("\nCorrect! "); 
+							System.out.println(); 
+						}
+
+						else {
+							System.out.println(); 
+							System.out.println("Incorrect. The answer is: " + sum ); 
+							System.out.println();
+						}
+
 					}
+					catch (Exception e) {
 
-					else {
+						input.nextLine();
 						System.out.println(); 
 						System.out.println("Incorrect. The answer is: " + sum ); 
 						System.out.println();
+
 					}
+
+					
 
 					System.out.println("Would you like to: \n");  
 					System.out.println(); 
@@ -70,24 +85,38 @@ public class RandomMathProblemGenerator {
 					System.out.println(); 
 					System.out.println("Enter your choice of 1, 2, or 3: \n"); 
 
-					loopOption = input.nextLine(); 
+					subMenu = 0;
 
-					switch ( loopOption ) {
+					while (subMenu == 0) {
 
-					case "1":
-					System.out.println(); 
-					break; 
+						loopOption = input.nextLine();
 
-					case "2":
-					i++; 
-					break; 
+						switch ( loopOption ) {
 
-					case "3": 
-					System.out.println(); 
-					System.out.println("Come practice again soon! "); 
-					System.out.println();
-					System.exit(1); 
-					break; 
+							case "1":
+							System.out.println(); 
+							subMenu++;
+							break; 
+
+							case "2":
+							i++; 
+							subMenu++;
+							break; 
+
+							case "3": 
+							System.out.println(); 
+							System.out.println("Come practice again soon! "); 
+							System.out.println();
+							System.exit(1); 
+							break;
+
+							default:
+							System.out.println(); 
+							System.out.println("Invalid Input! Please enter a number 1 - 3"); 
+							System.out.println();
+							break;
+
+						}
 					}
 		
 				} 
@@ -102,16 +131,28 @@ public class RandomMathProblemGenerator {
 					if ( num1 >= num2 ) {
 						System.out.println("What is " + num1 + " - " + num2 + " ? \n");
 						difference = num1 - num2;
-						answer = input.nextInt();
 
-						if ( answer == difference ) {
-							System.out.println("\nCorrect! "); 
-							System.out.println(); 
+						try{
+							answer = input.nextInt();
+							input.nextLine();
+
+							if ( answer == difference ) {
+								System.out.println("\nCorrect! "); 
+								System.out.println(); 
+							}
+							else {
+								System.out.println(); 
+								System.out.println("Incorrect. The answer is: " + difference); 
+								System.out.println();
+							}
 						}
-						else {
-							System.out.println(); 
-							System.out.println("Incorrect. The answer is: " + difference); 
-							System.out.println();
+						catch (Exception e) {
+						
+						input.nextLine();
+						System.out.println(); 
+						System.out.println("Incorrect. The answer is: " + difference ); 
+						System.out.println();
+
 						}
 
 					}
@@ -119,25 +160,38 @@ public class RandomMathProblemGenerator {
 					else {
 						System.out.println("What is " + num2 + " - " + num1 + " ? \n");
 						difference = num2 - num1;	
-						answer = input.nextInt();
-						input.nextLine();
 
-						if ( answer == difference ) {
+						try{
+							answer = input.nextInt();
+							input.nextLine();
 
-							System.out.println("\nCorrect! "); 
-							System.out.println(); 
-				
+							if ( answer == difference ) {
+
+								System.out.println("\nCorrect! "); 
+								System.out.println(); 
+					
+							}
+
+							else {
+
+								System.out.println(); 
+								System.out.println("Incorrect. The answer is: " + difference); 
+								System.out.println();
+
+							}
 						}
-
-						else {
-
-							System.out.println(); 
-							System.out.println("Incorrect. The answer is: " + difference); 
-							System.out.println();
+						catch (Exception e) {
+						
+						input.nextLine();
+						System.out.println(); 
+						System.out.println("Incorrect. The answer is: " + difference ); 
+						System.out.println();
 
 						}
 
 					}
+
+					
 
 					System.out.println("Would you like to: \n");  
 					System.out.println(); 
@@ -146,25 +200,40 @@ public class RandomMathProblemGenerator {
 					System.out.println("3. exit program? \n"); 
 					System.out.println(); 
 					System.out.println("Enter your choice of 1, 2, or 3: \n"); 
-					loopOption = input.nextLine(); 
+					
 
-					switch ( loopOption ) {
+					subMenu = 0;
 
-					case "1":
-					System.out.println(); 
-					break; 
+					while (subMenu == 0) {
 
-					case "2":
-					i++; 
-					break; 
+						loopOption = input.nextLine(); 
 
-					case "3": 
-					System.out.println(); 
-					System.out.println("Come practice again soon! "); 
-					System.out.println();
-					System.exit(1); 
-					break; 
+						switch ( loopOption ) {
 
+							case "1":
+							System.out.println();
+							subMenu++;
+							break; 
+
+							case "2":
+							i++; 
+							subMenu++;
+							break; 
+
+							case "3": 
+							System.out.println(); 
+							System.out.println("Come practice again soon! "); 
+							System.out.println();
+							System.exit(1); 
+							break;
+
+							default:
+							System.out.println(); 
+							System.out.println("Invalid Input! Please enter a number 1 - 3"); 
+							System.out.println();
+							break;
+
+						}
 					}
 		
 				} 
@@ -178,16 +247,27 @@ public class RandomMathProblemGenerator {
 					num2 = ( int )(Math.random() * 13 ); 
 					System.out.println("What is " + num1 + " * " + num2 + " ? \n");
 					product = num1 * num2; 
-					answer = input.nextInt(); 
-					input.nextLine();
 
-					if ( answer == product ) {
-						System.out.println("\nCorrect! "); 
-						System.out.println(); 
+					try{
+						answer = input.nextInt(); 
+						input.nextLine();
+
+						if ( answer == product ) {
+							System.out.println("\nCorrect! "); 
+							System.out.println(); 
+						}
+
+						else {
+
+							System.out.println(); 
+							System.out.println("Incorrect. The answer is: " + product ); 
+							System.out.println();
+
+						}
 					}
-
-					else {
-
+					catch (Exception e) {
+						
+						input.nextLine();
 						System.out.println(); 
 						System.out.println("Incorrect. The answer is: " + product ); 
 						System.out.println();
@@ -201,26 +281,40 @@ public class RandomMathProblemGenerator {
 					System.out.println("3. exit program? \n"); 
 					System.out.println(); 
 					System.out.println("Enter your choice of 1, 2, or 3: \n"); 
-					loopOption = input.nextLine(); 
 
-					switch ( loopOption ) {
+					subMenu = 0;
 
-					case "1":
-					System.out.println(); 
-					break; 
+					while (subMenu == 0) {
 
-					case "2":
-					i++; 
-					break; 
+						loopOption = input.nextLine(); 
 
-					case "3": 
-					System.out.println(); 
-					System.out.println("Come practice again soon! "); 
-					System.out.println();
-					System.exit(1);
+						switch ( loopOption ) {
 
-					break; 
+							case "1":
+							System.out.println(); 
+							subMenu++;
+							break; 
 
+							case "2":
+							i++; 
+							subMenu++;
+							break; 
+
+							case "3": 
+							System.out.println(); 
+							System.out.println("Come practice again soon! "); 
+							System.out.println();
+							System.exit(1);
+
+							break; 
+
+							default:
+							System.out.println(); 
+							System.out.println("Invalid Input! Please enter a number 1 - 3"); 
+							System.out.println();
+							break;
+
+						}
 					}
 		
 				} 
@@ -230,22 +324,34 @@ public class RandomMathProblemGenerator {
 				case "4": 
 
 				while ( i == 0 ) {
+
 					num1 = ( int )( Math.random() * 89 ) + 12;
 					num2 = ( int )(Math.random() * 13 ); 
 					System.out.println("What is " + num1 + " / " + num2 + " ? Include 2 decimal digits in your answer \n");
 					quotient = Math.round(((double)num1 / (double)num2) * 100.0) / 100.0; 
-					answerDivision = input.nextDouble(); 
-					input.nextLine();
 
-					if ( answerDivision == quotient ) {
-						System.out.println("\nCorrect! "); 
-						System.out.println(); 
-				
+					try{
+						answerDivision = input.nextDouble(); 
+						input.nextLine();
+
+						if ( answerDivision == quotient ) {
+							System.out.println("\nCorrect! "); 
+							System.out.println(); 
+					
+						}
+
+						else {
+
+							System.out.println();
+							System.out.println("Incorrect. The answer is: " + quotient ); 
+							System.out.println();
+
+						}
 					}
-
-					else {
-
-						System.out.println();
+					catch (Exception e) {
+						
+						input.nextLine();
+						System.out.println(); 
 						System.out.println("Incorrect. The answer is: " + quotient ); 
 						System.out.println();
 
@@ -259,40 +365,54 @@ public class RandomMathProblemGenerator {
 					System.out.println(); 
 					System.out.println("Enter your choice of 1, 2, or 3: \n"); 
 
-					loopOption = input.nextLine(); 
+					subMenu = 0;
 
-					switch ( loopOption ) {
+					while (subMenu == 0) {
 
-					case "1":
-					System.out.println(); 
-					break; 
+						loopOption = input.nextLine(); 
 
-					case "2":
-					i++; 
-					break; 
+						switch ( loopOption ) {
 
-					case "3": 
+							case "1":
+							System.out.println(); 
+							subMenu++;
+							break; 
 
-					System.out.println(); 
-					System.out.println("Come practice again soon! "); 
-					System.out.println();
-					System.exit(1); 
+							case "2":
+							i++; 
+							subMenu++;
+							break; 
 
-					break; 
+							case "3": 
 
-				}
+							System.out.println(); 
+							System.out.println("Come practice again soon! "); 
+							System.out.println();
+							System.exit(1); 
+
+							break; 
+
+							default:
+							System.out.println(); 
+							System.out.println("Invalid Input! Please enter a number 1 - 3"); 
+							System.out.println();
+							break;
+
+						}
+
+					}
 		
-			}
+				}
 
-			break;
+				break;
 
-			default: 
+				default: 
 
-			System.out.println(); 
-			System.out.println("Invalid Input! Please enter a number 1 - 4"); 
-			i++; 
+				System.out.println(); 
+				System.out.println("Invalid Input! Please enter a number 1 - 4"); 
+				i++; 
 
-			break;  
+				break;  
 
 			}
 
