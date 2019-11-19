@@ -36,5 +36,5 @@ public class menuAlert {
         window.setScene(scene);
         window.showAndWait();
     }
-
+    
 }
